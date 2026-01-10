@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube AI Summarizer Settings</title>
+    <style>
+      body {
+        width: 350px;
+        padding: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #1a1a1a;
+        color: #e0e0e0;
+        margin: 0;
+      }
+
+      h2 {
+        margin: 0 0 20px 0;
+        font-size: 18px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .icon {
+        font-size: 24px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #aaa;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 6px;
+        background: #2a2a2a;
+        color: #fff;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      select:focus {
+        outline: none;
+        border-color: #1e90ff;
+      }
+
+      select {
+        cursor: pointer;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        background: #1e90ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #1873cc;
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+
+      .message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        text-align: center;
+        display: none;
+      }
+
+      .message.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        padding: 12px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+
+      .message.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+
+      .info {
+        margin-top: 20px;
+        padding: 12px;
+        background: #2a2a2a;
+        border-radius: 6px;
+        font-size: 12px;
+        color: #999;
+        line-height: 1.5;
+      }
+
+      .info a {
+        color: #1e90ff;
+        text-decoration: none;
+      }
+
+      .info a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <span class="icon">🎥</span>
+      <span id="popupTitle"></span>
+    </h2>
+
+    <div class="form-group">
+      <label for="apiKey" id="apiKeyLabel"></label>
+      <input type="text" id="apiKey" placeholder="" autocomplete="off" />
+    </div>
+
+    <div class="form-group">
+      <label for="language" id="languageLabel"></label>
+      <select id="language">
+        <option value="vi">Tiếng Việt</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <button id="saveBtn"></button>
+
+    <div class="message" id="message"></div>
+
+    <div class="info" id="infoSection">
+      <strong id="infoTitle"></strong><br />
+      <span id="infoText"></span>
+    </div>
+
+    <!-- Load language files -->
+    <script src="lang/vi.js"></script>
+    <script src="lang/en.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
